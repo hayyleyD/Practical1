@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Birthday</th>
+                <th>Height</th>
+                <th>Image</th>
+                <th>Alive</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hero in Model)
+            {
+                <tr>
+                    <td>@hero.Id</td>
+                    <td>@hero.Name</td>
+                    <td>@hero.Age</td>
+                    <td>@hero.Birthday</td>
+                    <td>@hero.Height</td>
+                    <td><img src="@hero.Image"</td>
+                    <td><input type="checkbox" name="selectedHeroes" value="@hero.Aive" @(hero.IsAlive ? "checked" : "") disabled /></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>
